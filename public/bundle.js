@@ -705,19 +705,37 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
-
+  console.log(variables);
+  let name = "Lucy";
+  if (variables.name !== null) name = variables.name;
+  let lastname = "chang";
+  if (variables.lastname !== null) lastname = variables.lastname;
+  let twitter = "kingkremas";
+  if (variables.twitter !== null) twitter = variables.twitter;
+  let github = "chall298";
+  if (variables.github !== "alesanchezr") github = variables.github;
+  let linkedin = "dariofurman";
+  if (variables.linkedin !== null) linkedin = variables.linkedin;
+  let instagram = "kingkremas_";
+  if (variables.instagram !== null) instagram = variables.instagram;
+  let screen = "position";
+  if (variables.role !== null) screen = variables.role;
+  let house = "city";
+  if (variables.city !== null) house = variables.city;
+  let kay = "country";
+  if (variables.country !== null) kay = variables.country;
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${name} ${lastname}</h1>
+          <h2>${screen}</h2>
+          <h3>${house}, ${kay}</h3>
+          <ul class="position-left">
+            <li><a href="https://twitter.com/${twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/${linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
